@@ -2454,8 +2454,266 @@ a {
     color: var(--primary-blue);
 }
 
+/* ===================================
+   VISION MISSION FLIP CARDS
+   =================================== */
 
+.vm-section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
 
+.vm-section-header .section-badge {
+    margin-bottom: 1rem;
+}
+
+.vm-flip-grid {
+    display: flex;
+    gap: 2.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3.5rem;
+}
+
+.vm-flip-card {
+    width: 380px;
+    height: 340px;
+    perspective: 1200px;
+    cursor: pointer;
+}
+
+.vm-flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.75s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.vm-flip-card:hover .vm-flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.vm-flip-front,
+.vm-flip-back {
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+}
+
+/* Vision Front */
+.vision-front {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #2563eb 60%, #1d4ed8 100%);
+    color: white;
+}
+
+/* Mission Front */
+.mission-front {
+    background: linear-gradient(135deg, var(--accent-gold) 0%, #f59e0b 60%, #d97706 100%);
+    color: var(--slate-900);
+}
+
+.vm-front-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
+    animation: vm-icon-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes vm-icon-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+}
+
+.vm-front-title {
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+    font-family: var(--heading-font);
+}
+
+.vm-front-hint {
+    font-size: 0.85rem;
+    opacity: 0.75;
+    font-style: italic;
+    border: 1px solid rgba(255,255,255,0.4);
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+}
+
+.mission-front .vm-front-hint {
+    border-color: rgba(0,0,0,0.25);
+    color: rgba(0,0,0,0.65);
+}
+
+/* Vision Back */
+.vision-back {
+    background: white;
+    color: var(--slate-800);
+    transform: rotateY(180deg);
+    border: 3px solid rgba(30, 64, 175, 0.15);
+    justify-content: flex-start;
+    padding-top: 2rem;
+}
+
+/* Mission Back */
+.mission-back {
+    background: white;
+    color: var(--slate-800);
+    transform: rotateY(180deg);
+    border: 3px solid rgba(245, 158, 11, 0.25);
+    justify-content: flex-start;
+    padding-top: 2rem;
+}
+
+.vm-back-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+    font-family: var(--heading-font);
+    text-align: center;
+    width: 100%;
+}
+
+.mission-back .vm-back-title {
+    color: var(--dark-gold);
+}
+
+.vm-back-text {
+    font-size: 0.97rem;
+    line-height: 1.75;
+    color: var(--slate-700);
+    text-align: center;
+}
+
+.vm-mission-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.vm-mission-list li {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: var(--slate-700);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f1f5f9;
+    padding-left: 1.25rem;
+    position: relative;
+}
+
+.vm-mission-list li::before {
+    content: '●';
+    position: absolute;
+    left: 0;
+    color: var(--accent-gold);
+    font-size: 0.65rem;
+    top: 0.68rem;
+}
+
+.vm-mission-list li:last-child {
+    border-bottom: none;
+}
+
+/* ===================================
+   UNIQUE FEATURES - CENTERED
+   =================================== */
+
+.vm-unique-features {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.vm-features-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary-blue);
+    margin-bottom: 2rem;
+    font-family: var(--heading-font);
+    position: relative;
+    display: inline-block;
+}
+
+.vm-features-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--accent-gold);
+    border-radius: 2px;
+    margin: 0.5rem auto 0;
+}
+
+.vm-features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.25rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.vm-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: white;
+    border: 1px solid rgba(30, 64, 175, 0.12);
+    border-radius: 50px;
+    padding: 0.75rem 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+.vm-feature-item:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent-gold);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.vm-feature-icon {
+    font-size: 1.4rem;
+}
+
+.vm-feature-text {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--slate-800);
+}
+
+/* Responsive flip cards */
+@media (max-width: 860px) {
+    .vm-flip-card {
+        width: 320px;
+        height: 300px;
+    }
+}
+
+@media (max-width: 700px) {
+    .vm-flip-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .vm-flip-card {
+        width: 100%;
+        max-width: 400px;
+        height: 300px;
+    }
+}
 
 /* ===================================
    PROGRAMS MODERN (CARDS)
