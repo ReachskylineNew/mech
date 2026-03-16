@@ -5,10 +5,7 @@
 
 // Smooth scroll functions
 function scrollToForm() {
-    const form = document.getElementById('application');
-    if (form) {
-        form.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    window.location.href = 'https://admissions.kanchiuniv.ac.in/';
 }
 
 function scrollToPrograms() {
@@ -290,16 +287,9 @@ function handleWizardSubmit(event) {
     });
     localStorage.setItem('meApplications', JSON.stringify(submissions));
 
-    // Show success message
-    alert('🎉 Thank you for your application! Our admissions team will contact you within 24 hours.');
-
-    // Reset form
-    event.target.reset();
-    currentStep = 1;
-    updateWizardStep();
-
-    // Scroll to top
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Show success message and redirect
+    alert('🎉 Redirecting you to our official admissions portal...');
+    window.location.href = 'https://admissions.kanchiuniv.ac.in/';
 }
 
 // ===================================
