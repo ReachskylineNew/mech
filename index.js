@@ -4,10 +4,6 @@
 // ===================================
 
 // Smooth scroll functions
-function scrollToForm() {
-    window.location.href = 'https://admissions.kanchiuniv.ac.in/';
-}
-
 function scrollToPrograms() {
     const programs = document.getElementById('programs');
     if (programs) {
@@ -155,146 +151,7 @@ function toggleAccordion(element) {
     }
 }
 
-// ===================================
-// VALIDATION FUNCTIONS
-// ===================================
 
-function validateEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
-
-function validatePhone(phone) {
-    const phoneRegex = /^(\+91|0)?[6-9]\d{9}$/;
-    return phoneRegex.test(phone.replace(/\s|-/g, ''));
-}
-
-function showFieldError(input, message) {
-    input.style.borderColor = '#ef4444';
-    input.style.borderWidth = '2px';
-
-    // Remove existing error message if any
-    const existingError = input.parentElement.querySelector('.error-message');
-    if (existingError) {
-        existingError.remove();
-    }
-
-    // Create and show error message
-    const errorMsg = document.createElement('span');
-    errorMsg.className = 'error-message';
-    errorMsg.textContent = message;
-    errorMsg.style.cssText = `
-        display: block;
-        color: #ef4444;
-        font-size: 0.85rem;
-        margin-top: 0.5rem;
-        font-weight: 500;
-    `;
-    input.parentElement.appendChild(errorMsg);
-}
-
-function clearFieldError(input) {
-    input.style.borderColor = '';
-    input.style.borderWidth = '';
-    const errorMsg = input.parentElement.querySelector('.error-message');
-    if (errorMsg) {
-        errorMsg.remove();
-    }
-}
-
-// ===================================
-// MULTI-STEP WIZARD FORM
-// ===================================
-
-let currentStep = 1;
-
-function nextStep() {
-    const currentStepElement = document.querySelector(`.wizard-step[data-step="${currentStep}"]`);
-    const inputs = currentStepElement.querySelectorAll('input[required], select[required]');
-
-    // Validate current step
-    let isValid = true;
-    inputs.forEach(input => {
-        if (!input.value) {
-            isValid = false;
-            showFieldError(input, 'This field is required');
-        } else {
-            // Additional validation for email and phone
-            if (input.name === 'email') {
-                if (!validateEmail(input.value)) {
-                    isValid = false;
-                    showFieldError(input, 'Please enter a valid email address (e.g., user@example.com)');
-                } else {
-                    clearFieldError(input);
-                }
-            } else if (input.name === 'phone') {
-                if (!validatePhone(input.value)) {
-                    isValid = false;
-                    showFieldError(input, 'Please enter a valid phone number ');
-                } else {
-                    clearFieldError(input);
-                }
-            } else {
-                clearFieldError(input);
-            }
-        }
-    });
-
-    if (!isValid) {
-        return;
-    }
-
-    if (currentStep < 3) {
-        currentStep++;
-        updateWizardStep();
-    }
-}
-
-function prevStep() {
-    if (currentStep > 1) {
-        currentStep--;
-        updateWizardStep();
-    }
-}
-
-function updateWizardStep() {
-    // Update steps
-    document.querySelectorAll('.wizard-step').forEach(step => {
-        step.classList.remove('active');
-    });
-    document.querySelector(`.wizard-step[data-step="${currentStep}"]`).classList.add('active');
-
-    // Update progress
-    document.querySelectorAll('.progress-step').forEach(step => {
-        step.classList.remove('active');
-    });
-    document.querySelector(`.progress-step[data-step="${currentStep}"]`).classList.add('active');
-}
-
-function handleWizardSubmit(event) {
-    event.preventDefault();
-
-    const formData = new FormData(event.target);
-    const data = Object.fromEntries(formData);
-
-    console.log('Form submitted:', data);
-
-    // Store in localStorage
-    const submissions = JSON.parse(localStorage.getItem('meApplications') || '[]');
-    submissions.push({
-        ...data,
-        timestamp: new Date().toISOString()
-    });
-    localStorage.setItem('meApplications', JSON.stringify(submissions));
-
-    // Show success message and redirect
-    alert('🎉 Redirecting you to our official admissions portal...');
-    window.location.href = 'https://admissions.kanchiuniv.ac.in/';
-}
-
-// ===================================
-// INTERSECTION OBSERVER ANIMATIONS
-// ===================================
 
 const observerOptions = {
     threshold: 0.1,
@@ -328,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Animate sections on scroll
-    const sections = document.querySelectorAll('.programs-carousel, .features-modern, .values-timeline, .form-wizard, .lab-life-section, .video-demos');
+    const sections = document.querySelectorAll('.programs-carousel, .features-modern, .values-timeline, .lab-life-section, .video-demos');
     sections.forEach(section => {
         section.style.opacity = '0';
         section.style.transform = 'translateY(30px)';

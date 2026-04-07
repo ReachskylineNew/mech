@@ -112,7 +112,7 @@ src="https://www.facebook.com/tr?id=2396497170622210&ev=PageView&noscript=1"
                             <span class="dept-subtitle">Engineering and Technology</span>
                         </div>
                         <div class="nav-links" id="navLinks">
-                            <button class="cta-button cta-primary" onclick="scrollToForm()">Apply Now</button>
+                            <button type="button" class="cta-button cta-primary npfWidgetButton npfWidget-546aaf4137e7beff1abb57a4a9ac072c">Apply Now</button>
                         </div>
                     </div>
                 </div>
@@ -146,7 +146,7 @@ src="https://www.facebook.com/tr?id=2396497170622210&ev=PageView&noscript=1"
                 </div>
 
                 <div class="hero-actions">
-                    <button class="btn-hero-primary pulsate-btn" onclick="scrollToForm()">
+                    <button type="button" class="btn-hero-primary pulsate-btn npfWidgetButton npfWidget-546aaf4137e7beff1abb57a4a9ac072c">
                         Apply Now
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2">
@@ -463,7 +463,7 @@ src="https://www.facebook.com/tr?id=2396497170622210&ev=PageView&noscript=1"
                             <strong>Minor Degrees:</strong> AI/ML, Data Science, Cyber Security, IoT, VLSI, 5G, Image
                             Processing, Sensors, Microgrid, & more.
                         </p>
-                        <button class="p-btn-glow" onclick="scrollToForm()">Apply for B.E →</button>
+                        <button type="button" class="p-btn-glow npfWidgetButton npfWidget-546aaf4137e7beff1abb57a4a9ac072c">Apply for B.E →</button>
                     </div>
                 </div>
 
@@ -484,7 +484,7 @@ src="https://www.facebook.com/tr?id=2396497170622210&ev=PageView&noscript=1"
                             <li><span>�</span> No Age Limit for PT</li>
                             <li><span>�</span> Advanced Design Research</li>
                         </ul>
-                        <button class="p-btn-glow primary" onclick="scrollToForm()">Apply for M.E →</button>
+                        <button type="button" class="p-btn-glow primary npfWidgetButton npfWidget-546aaf4137e7beff1abb57a4a9ac072c">Apply for M.E →</button>
                     </div>
                 </div>
 
@@ -505,7 +505,7 @@ src="https://www.facebook.com/tr?id=2396497170622210&ev=PageView&noscript=1"
                             <li><span>⚙️</span> Advanced Research Modules</li>
                             <li><span>📝</span> High-Impact Publications</li>
                         </ul>
-                        <button class="p-btn-glow" onclick="scrollToForm()">Enquire Now →</button>
+                        <button type="button" class="p-btn-glow npfWidgetButton npfWidget-546aaf4137e7beff1abb57a4a9ac072c">Enquire Now →</button>
                     </div>
                 </div>
             </div>
@@ -1034,115 +1034,7 @@ src="https://www.facebook.com/tr?id=2396497170622210&ev=PageView&noscript=1"
         </div>
     </section>
 
-    <section class="form-wizard" id="application">
-        <div class="container">
-            <div class="wizard-header">
-                <h2>Begin Your ME Journey</h2>
-                <p>Complete the form below in 3 simple steps</p>
-            </div>
 
-            <div class="wizard-progress">
-                <div class="progress-step active" data-step="1">
-                    <div class="step-number">1</div>
-                    <span>Personal Info</span>
-                </div>
-                <div class="progress-line"></div>
-                <div class="progress-step" data-step="2">
-                    <div class="step-number">2</div>
-                    <span>Education</span>
-                </div>
-                <div class="progress-line"></div>
-                <div class="progress-step" data-step="3">
-                    <div class="step-number">3</div>
-                    <span>Preferences</span>
-                </div>
-            </div>
-
-            <form class="wizard-form" id="wizardForm" onsubmit="handleWizardSubmit(event)">
-                <!-- Step 1: Personal Info -->
-                <div class="wizard-step active" data-step="1">
-                    <div class="form-grid-2">
-                        <div class="form-field">
-                            <label>Full Name *</label>
-                            <input type="text" name="fullname" required placeholder="Enter your full name">
-                        </div>
-                        <div class="form-field">
-                            <label>Email Address *</label>
-                            <input type="email" name="email" required placeholder="your.email@example.com"
-                                pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
-                        </div>
-                        <div class="form-field">
-                            <label>Phone Number *</label>
-                            <input id="mobile" type="number" inputmode="numeric" name="phone" required
-                                placeholder="+91 XXXXX XXXXX" pattern="^[6-9]\d{9}$"
-                                title="Enter a valid 10-digit phone number">
-                        </div>
-                        <div class="form-field">
-                            <label>Date of Birth *</label>
-                            <input type="date" name="dob" required>
-                        </div>
-                    </div>
-                    <div class="wizard-actions">
-                        <button type="button" class="btn-wizard-next" onclick="nextStep()">Next Step →</button>
-                    </div>
-                </div>
-
-                <!-- Step 2: Education -->
-                <div class="wizard-step" data-step="2">
-                    <div class="form-grid-2">
-                        <div class="form-field">
-                            <label>Highest Qualification *</label>
-                            <input type="text" name="education" required placeholder="e.g., 12th Science, Diploma, B.E">
-                        </div>
-                        <div class="form-field">
-                            <label>School/College *</label>
-                            <input type="text" name="university" required placeholder="Name of your institution">
-                        </div>
-                        <div class="form-field">
-                            <label>Year of Passing *</label>
-                            <input type="number" name="year" required min="2000" max="2030" placeholder="2024">
-                        </div>
-                        <div class="form-field">
-                            <label>Percentage/CGPA *</label>
-                            <input type="text" name="marks" required placeholder="85% or 8.5 CGPA">
-                        </div>
-                    </div>
-                    <div class="wizard-actions">
-                        <button type="button" class="btn-wizard-prev" onclick="prevStep()">← Previous</button>
-                        <button type="button" class="btn-wizard-next" onclick="nextStep()">Next Step →</button>
-                    </div>
-                </div>
-
-                <!-- Step 3: Preferences -->
-                <div class="wizard-step" data-step="3">
-                    <div class="form-grid-2">
-                        <div class="form-field">
-                            <label>Preferred Program *</label>
-                            <select name="program" required>
-                                <option value="">Select a program</option>
-                                <option value="be-ece">B.E Mechanical Engineering</option>
-                                <option value="me-comm">M.E Engineering Design</option>
-                                <option value="phd">Ph.D. in Mechanical Engineering</option>
-                            </select>
-                        </div>
-                        <div class="form-field">
-                            <label>Area of Interest</label>
-                            <input type="text" name="experience" placeholder="e.g., Robotics, 3D Printing, Automation">
-                        </div>
-                    </div>
-                    <div class="form-field full-width">
-                        <label>Why do you want to join ME?</label>
-                        <textarea name="message" rows="4"
-                            placeholder="Tell us about your interest in mechanical engineering and career goals..."></textarea>
-                    </div>
-                    <div class="wizard-actions">
-                        <button type="button" class="btn-wizard-prev" onclick="prevStep()">← Previous</button>
-                        <button type="submit" class="btn-wizard-submit">Submit Application ✓</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </section>
 
 
     <footer class="footer">
@@ -1191,7 +1083,7 @@ src="https://www.facebook.com/tr?id=2396497170622210&ev=PageView&noscript=1"
                 <span class="sticky-title">Admissions Open 2026</span>
                 <span class="sticky-subtitle">Join the future of Civil</span>
             </div>
-            <button class="sticky-desktop-btn" onclick="scrollToForm()">Apply Now</button>
+            <button type="button" class="sticky-desktop-btn npfWidgetButton npfWidget-546aaf4137e7beff1abb57a4a9ac072c">Apply Now</button>
         </div>
     </div>
 
@@ -1201,7 +1093,7 @@ src="https://www.facebook.com/tr?id=2396497170622210&ev=PageView&noscript=1"
             <span>Admissions Open 2026</span>
             <small>Join the future of ME</small>
         </div>
-        <button class="sticky-btn" onclick="scrollToForm()">Apply Now</button>
+        <button type="button" class="sticky-btn npfWidgetButton npfWidget-546aaf4137e7beff1abb57a4a9ac072c">Apply Now</button>
     </div>
 
     <div class="sticky-cta-mobile">
@@ -1214,12 +1106,25 @@ src="https://www.facebook.com/tr?id=2396497170622210&ev=PageView&noscript=1"
             <i class="fa-brands fa-whatsapp"></i>
             <span>WhatsApp</span>
         </a>
-        <button class="sticky-action-btn btn-blue" onclick="scrollToForm()">
+        <button type="button" class="sticky-action-btn btn-blue npfWidgetButton npfWidget-546aaf4137e7beff1abb57a4a9ac072c">
             <i class="fa-solid fa-graduation-cap"></i>
             <span>Apply Now</span>
         </button>
     </div>
 
+    <script src="https://in6cdn.npfs.co/js/widget/npfwpopup.js"></script>
+    <script>
+    let npfW546aaf4137e7beff1abb57a4a9ac072c = new NpfWidgetsInit({
+      'widgetId':'546aaf4137e7beff1abb57a4a9ac072c',
+      'baseurl':'widgets.in6.nopaperforms.com',
+      'formTitle':'Enquiry Form',
+      'titleColor':'#FF0033',
+      'backgroundColor':'#ddd',
+      'iframeHeight':'500px',
+      'buttonbgColor':'#4c79dc',
+      'buttonTextColor':'#FFF',
+    });
+    </script>
     <script src="index.js"></script>
 </body>
 
